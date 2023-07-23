@@ -1,6 +1,6 @@
 <script>
 	import GradientLogo from '$lib/gradient-logo/gradient-logo.svelte';
-	import { typewriter } from '$lib/typewriter';
+	import { typewriter } from '$lib/transitions/typewriter';
 	import { blur, scale } from 'svelte/transition';
 </script>
 
