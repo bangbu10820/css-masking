@@ -1,5 +1,6 @@
 <script>
 	import GradientLogo from '$lib/gradient-logo/gradient-logo.svelte';
+	import { blur, scale } from 'svelte/transition';
 </script>
 
 <svelte:head>
@@ -8,9 +9,11 @@
 </svelte:head>
 
 <div class="w-full h-screen flex justify-center items-center">
-	<div class="h-2/4">
-		<GradientLogo />
-	</div>
+	{#await (() => new Promise((res) => setTimeout(res, 500)))() then}
+		<div class="h-3/4" transition:blur={{ duration: 2500 }}>
+			<GradientLogo />
+		</div>
+	{/await}
 </div>
 
 <style>
